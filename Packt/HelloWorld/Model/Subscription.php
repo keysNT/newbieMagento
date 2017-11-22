@@ -3,7 +3,7 @@ namespace Packt\HelloWorld\Model;
 
 use Magento\TestFramework\Event\Magento;
 
-class Subscription extends \Magento\Framework\Model\AbstractExtensibleModel {
+class Subscription extends \Magento\Framework\Model\AbstractModel {
     const STATUS_PENDING = 'pending';
     const STATUS_APPROVED = 'approved';
     const STATUS_DECLINED = 'decliend';
