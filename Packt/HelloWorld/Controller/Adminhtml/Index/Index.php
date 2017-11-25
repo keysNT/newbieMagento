@@ -21,4 +21,7 @@ class Index extends \Magento\Backend\App\Action {
         $resultPage = $this->resultPageFactory->create();
         return $resultPage;
     }
+    protected function _isAllowed(){
+        return $this->_authorization->isAllowed('Packt_HelloWorld::index');//Packt_HelloWorld::index
+    }
 }

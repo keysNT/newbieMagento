@@ -1,5 +1,5 @@
 <?php
-namespace Packt\HelloWorld\Model\ResourceModelSubscription;
+namespace Packt\HelloWorld\Model\ResourceModel\Subscription;
 
 /**
  * Subscription Collection
