@@ -1,0 +1,12 @@
+<h2>HelloWorld</h2>
+<p>data magenest_movie</p>
+
+<?php
+    $myData1 = $block->getCustomerDataInDatabase('magenest_movie');
+    print_r($myData1);
+?>
+<p>data magenest_actor</p>
+<?php
+    $myData2 = $block->getCustomerDataInDatabase('magenest_actor');
+    print_r($myData2);
+?>
