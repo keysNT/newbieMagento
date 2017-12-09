@@ -11,6 +11,28 @@ class InstallSchema implements InstallSchemaInterface {
             $installer = $setup;
             $installer->startSetup();
             $connect = $installer->getConnection();
+
+            $magenest_director = $installer->getConnection()->newTable(
+                $installer->getTable('magenest_director')
+            )->addColumn(
+                'director_id',
+                \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
+                null,[
+                'identity' => true,
+                'unsigned' => true,
+                'nullable' => false,
+                'primary' => true
+            ],
+                'Director Id'
+            )->addColumn(
+                'name',
+                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                255,
+                [],
+                'Name of Director'
+            )->setComment('Magenest director')->setOption('type', 'InnoDB')->setOption('charset','utf8');
+            $installer->getConnection()->createTable($magenest_director);
+
             $magenest_movie = $installer->getConnection()->newTable(
                 $installer->getTable('magenest_movie')
             )->addColumn(
@@ -49,27 +71,6 @@ class InstallSchema implements InstallSchemaInterface {
                 'Director Id'
             )->setComment('Add new table')->setOption('type', 'InnoDB')->setOption('charset', 'utf8');
             $installer->getConnection()->createTable($magenest_movie);
-
-            $magenest_director = $installer->getConnection()->newTable(
-                $installer->getTable('magenest_director')
-            )->addColumn(
-                'director_id',
-                \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
-                null,[
-                    'identity' => true,
-                    'unsigned' => true,
-                    'nullable' => false,
-                    'primary' => true
-                ],
-                'Director Id'
-            )->addColumn(
-                'name',
-                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
-                255,
-                [],
-                'Name of Director'
-            )->setComment('Magenest director')->setOption('type', 'InnoDB')->setOption('charset','utf8');
-            $installer->getConnection()->createTable($magenest_director);
 
             $magenest_actor = $installer->getConnection()->newTable(
                 $installer->getTable('magenest_actor')

@@ -4,7 +4,7 @@
         <title>Magenest Movie</title>
     </head>
     <body>
-        <remove name="wishlist_sidebar" />
+        <referenceBlock	name="wishlist_sidebar"	remove="true"/>
         <referenceContainer name="content">
             <block class="Magenest\Movie\Block\Display" name="displaymagenestmovie" template="Magenest_Movie::magenestMovie.phtml"/>
         </referenceContainer>
