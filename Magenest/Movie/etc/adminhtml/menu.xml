@@ -20,7 +20,7 @@
              title="Director"
              module="Magenest_Movie"
              sortOrder="20"
-             action="magenestmovie/director"
+             action="magenestmovie/movie/director"
              parent="Magenest_Movie::magenest_movie"
              resource="Magenest_Movie::director"
         />
@@ -28,17 +28,17 @@
              title="Actor"
              module="Magenest_Movie"
              sortOrder="20"
-             action="magenestmovie/actor"
+             action="magenestmovie/movie/actor"
              parent="Magenest_Movie::magenest_movie"
              resource="Magenest_Movie::actor"
         />
-        <add id="Magenest_Movie::movie_actor"
+        <add id="Magenest_Movie::movieactor"
              title="Movie Actor"
              module="Magenest_Movie"
              sortOrder="20"
-             action="magenestmovie/movie_actor"
+             action="magenestmovie/movie/movieactor"
              parent="Magenest_Movie::magenest_movie"
-             resource="Magenest_Movie::movie_actor"
+             resource="Magenest_Movie::movieactor"
         />
     </menu>
 </config>

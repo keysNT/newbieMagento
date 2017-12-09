@@ -1,7 +1,7 @@
 <?php
 namespace Magenest\Movie\Block\Adminhtml;
 
-class Movie extends \Magento\Backend\Block\Widget\Grid\Container {
+class Actor extends \Magento\Backend\Block\Widget\Grid\Container {
     /**
      * Constructor
      *
@@ -9,9 +9,9 @@ class Movie extends \Magento\Backend\Block\Widget\Grid\Container {
      */
     protected function _construct(){
         $this->_blockGroup = 'Magenest_Movie';
-        $this->_controller = 'adminhtml_movie';
-        $this->_headerText = __('Manage Movie');
-        $this->_addButtonLabel = __('Add Movie');
+        $this->_controller = 'adminhtml_actor';
+        $this->_headerText = __('Manage Actor');
+        $this->_addButtonLabel = __('Add Actor');
         parent::_construct();
     }
 }
