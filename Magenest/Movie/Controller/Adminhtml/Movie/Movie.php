@@ -16,6 +16,7 @@ class Movie extends \Magento\Backend\App\Action {
         $resultPage->addBreadcrumb(__('Movie'), __('Movie'));
         $resultPage->addBreadcrumb(__('Manage Movie'), __('Manage Movie'));
         $resultPage->getConfig()->getTitle()->prepend(__('Movie'));
+        $this->_eventManager->dispatch('adminhtml_customer_prepare_save');
         return $resultPage;
     }
     protected function _isAllowed(){

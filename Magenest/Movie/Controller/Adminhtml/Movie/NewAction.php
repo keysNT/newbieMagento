@@ -15,4 +15,7 @@ class NewAction extends \Magento\Backend\App\Action {
         $resultPage->getConfig()->getTitle()->prepend(__('Add new movie'));
         return $resultPage;
     }
+    public function _isAllowed(){
+        return $this->_authorization->isAllowed('Magenest_Movie::magenestmovie/movie/new');
+    }
 }

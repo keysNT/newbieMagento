@@ -1,0 +1,41 @@
+<h2>Add new movies hihi</h2>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$storeManager = $objectManager->create('\Magento\Store\Model\StoreManagerInterface');
+$baseURL_l = $social_image_url = $storeManager->getStore()->getBaseUrl();
+?>
+<form action="<?php echo $baseURL_l . 'admin/magenestmovie/movie/save' ?>" method="post" id="form-validate" enctype="multipart/form-data" autocomplete="off" data-mage-init='{"validation":{}}' data-hasrequired="<?php echo __('* Required Fields') ?>">
+    <table>
+        <tr>
+            <th>Name of Movie</th>
+            <td>
+                <input type="text" name="name" id="name"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Description of Movie</th>
+            <td>
+                <input type="text" name="description" id="description"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Rating of Movie</th>
+            <td>
+                <input type="text" name="rating" id="rating"/>
+            </td>
+        </tr>
+        <tr>
+            <th>Director Id</th>
+            <td>
+                <input type="text" name="director_id" id="director_id"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit" class="action submit primary" title="<?php echo __('Submit') ?>">
+                    <span><?php echo __('Submit') ?></span>
+                </button>
+            </td>
+        </tr>
+    </table>
+</form>
