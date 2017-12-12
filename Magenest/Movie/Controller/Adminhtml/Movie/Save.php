@@ -40,6 +40,10 @@ class Save extends \Magento\Framework\App\Action\Action{
             $movie->setDescription($description);
             $movie->setRating($rating);
             $movie->setDirectorId($director_id);
+            $this->_eventManager->dispatch(
+                'adminhtml_movie_prepare_save',
+                ['movie' => $movie]
+            );
             $movie->save();
 //            $this->getResponse()->setBody('success');
 //            $this->resultPageFactory->create();
